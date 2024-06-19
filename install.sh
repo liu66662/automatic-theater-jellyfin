@@ -49,6 +49,15 @@ else
   echo " macvlan网络创建示例：docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 macvlan_direct"
 fi
 
+sudo cp ./${compose_file} ./docker-compose.yml
+sudo chown -R ${USERNAME}:${GROUPNAME} ./docker-compose.yml
+sudo chmod -R 770 ./docker-compose.yml
+
+if [[ "${macvlan}" ]]; then
+  sudo sed -i "s/macvlan_name/${macvlan}/g" ./docker-compose.yml
+fi
+
+
 echo ""
 echo "开始创建目录 ......"
 if [[ ! -d ${MEDIA_PATH} ]]; then
@@ -100,9 +109,6 @@ echo "✅  修改 $(workdir) 目录权限成功"
 
 echo ""
 echo "添加显卡配置 ......"
-sudo cp ./${compose_file} ./docker-compose.yml
-sudo chown -R ${USERNAME}:${GROUPNAME} ./docker-compose.yml
-sudo chmod -R 770 ./docker-compose.yml
 DEVICE=""
 if [[ -d "/dev/dri" ]]; then
 	DEVICE="/dev/dri:/dev/dri"
