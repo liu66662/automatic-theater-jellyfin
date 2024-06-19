@@ -1,14 +1,8 @@
 {
-    "other": {
-        "save_path": ""
-    },
-    "prowlarr": {
-        "save_path": ""
-    },
     "radarr": {
         "save_path": ""
     },
-    "sonarr": {
+    "tv-sonarr": {
         "save_path": ""
     }
 }
