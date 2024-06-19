@@ -40,19 +40,19 @@ graph LR
 
 🤗 本项目涉及系统
 
-| 系统 | 功能 | 汉化 | 说明 |
-| :---: | :---: | :---: | :---: |
-| [Heimdall](https://github.com/linuxserver/Heimdall) | 程序仪表盘  | ⭕ | 导航页，自定义了 CSS 和 JS，开箱即用 |
-| [Portainer](https://github.com/portainer/portainer) | 容器管理系统 | ⭕ | 方便启动或关闭容器，查看日志等 |
-| [Emby](https://emby.media) | 媒体服务器 | ⭕ | 刮削信息，提供观看服务 |
-| [Jellyseerr](https://github.com/Fallenbagel/jellyseerr) | 聚合搜索 | ⭕ | 搜索并推送到 Sonarr / Radarr |
-| [Radarr](https://github.com/Radarr/Radarr) | 电影订阅系统 | ⭕ | 定时搜索，下载，重命名并导入 |
-| [Sonarr](https://github.com/Sonarr/Sonarr) | 电视剧和动漫订阅系统 | ❌ | 定时搜索，下载，重命名并导入 |
-| [Prowlarr](https://github.com/Prowlarr/Prowlarr) | 种子站代理 | ❌ | 可添加种子站，提供种子搜索，支持结果缓存 |
-| [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) | 绕过 Cloudflare 和 DDoS-GUARD | - | Prowlarr 已配置，无其他操作 |
-| [JProxy](https://github.com/LuckyPuppy514/jproxy) | 种子站代理过滤 | ⭕ | 介于 Sonarr / Radarr 和 Prowlarr / Prowlarr 之间的代理，主要用于优化查询和提升识别率 |
-| [qBittorrent](https://github.com/qbittorrent/qBittorrent) | 下载客户端 | ⭕ | qBittorrent |
-| [ChineseSubFinder](https://github.com/ChineseSubFinder/ChineseSubFinder) | 字幕下载 | ⭕ | 自动下载电影和电视剧字幕 |
+|                                   系统                                   |             功能             | 汉化 |                                         说明                                         |
+| :----------------------------------------------------------------------: | :---------------------------: | :--: | :----------------------------------------------------------------------------------: |
+|           [Heimdall](https://github.com/linuxserver/Heimdall)           |          程序仪表盘          |  ⭕  |                         导航页，自定义了 CSS 和 JS，开箱即用                         |
+|           [Portainer](https://github.com/portainer/portainer)           |         容器管理系统         |  ⭕  |                            方便启动或关闭容器，查看日志等                            |
+|                        [Emby](https://emby.media)                        |          媒体服务器          |  ⭕  |                                刮削信息，提供观看服务                                |
+|         [Jellyseerr](https://github.com/Fallenbagel/jellyseerr)         |           聚合搜索           |  ⭕  |                             搜索并推送到 Sonarr / Radarr                             |
+|                [Radarr](https://github.com/Radarr/Radarr)                |         电影订阅系统         |  ⭕  |                             定时搜索，下载，重命名并导入                             |
+|                [Sonarr](https://github.com/Sonarr/Sonarr)                |     电视剧和动漫订阅系统     |  ❌  |                             定时搜索，下载，重命名并导入                             |
+|             [Prowlarr](https://github.com/Prowlarr/Prowlarr)             |          种子站代理          |  ❌  |                       可添加种子站，提供种子搜索，支持结果缓存                       |
+|       [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr)       | 绕过 Cloudflare 和 DDoS-GUARD |  -  |                             Prowlarr 已配置，无其他操作                             |
+|            [JProxy](https://github.com/LuckyPuppy514/jproxy)            |        种子站代理过滤        |  ⭕  | 介于 Sonarr / Radarr 和 Prowlarr / Prowlarr 之间的代理，主要用于优化查询和提升识别率 |
+|        [qBittorrent](https://github.com/qbittorrent/qBittorrent)        |          下载客户端          |  ⭕  |                                     qBittorrent                                     |
+| [ChineseSubFinder](https://github.com/ChineseSubFinder/ChineseSubFinder) |           字幕下载           |  ⭕  |                               自动下载电影和电视剧字幕                               |
 
 Heimdall
 ![20230414183719](https://github.com/LuckyPuppy514/image/raw/main/2023/2023-04-14/20230414183719.webp)
@@ -88,14 +88,14 @@ ChineseSubFinder
 
 ### 💻 1. 硬件
 
-| 名称 | 推荐配置 | 说明 |
-| :---: | :---: | :---: |
-| CPU | 4核 | 例如：J1900, J3160, J4125 等 |
-| GPU | 非必要 | 主要用于 Emby 为转码提供硬件加速 |
-| 内存 | 4G | 4G 完全够用，2G 较为勉强 |
-| 固态 | 32G | 主要用于创建容器，保存配置 |
-| 硬盘 | 512G | 取决于你的视频数量，也可以参考 [cloud-drive](https://github.com/LuckyPuppy514/cloud-drive) 挂载云盘 |
-| 网络 | 100M | 内网速率 100M 或以上，无线最好支持 5G |
+| 名称 | 推荐配置 |                                                说明                                                |
+| :--: | :------: | :------------------------------------------------------------------------------------------------: |
+| CPU |   4核   |                                    例如：J1900, J3160, J4125 等                                    |
+| GPU |  非必要  |                                  主要用于 Emby 为转码提供硬件加速                                  |
+| 内存 |    4G    |                                      4G 完全够用，2G 较为勉强                                      |
+| 固态 |   32G   |                                     主要用于创建容器，保存配置                                     |
+| 硬盘 |   512G   | 取决于你的视频数量，也可以参考[cloud-drive](https://github.com/LuckyPuppy514/cloud-drive) 挂载云盘 |
+| 网络 |   100M   |                               内网速率 100M 或以上，无线最好支持 5G                               |
 
 ### 🐧 2. 系统
 
@@ -110,9 +110,9 @@ ChineseSubFinder
 
 ### 🌐 3. 网络
 
-🔥 重要事情说三遍，必须能够科学上网 🔥  
-🔥 重要事情说三遍，必须能够科学上网 🔥  
-🔥 重要事情说三遍，必须能够科学上网 🔥  
+🔥 重要事情说三遍，必须能够科学上网 🔥
+🔥 重要事情说三遍，必须能够科学上网 🔥
+🔥 重要事情说三遍，必须能够科学上网 🔥
 
 执行以下命令，如果能够输出网页代码，则说明可以科学上网
 
@@ -240,24 +240,21 @@ graph LR
     1[Heimdall] == 2. 搜索和请求电影/电视剧/动漫 ==> 3[Jellyseerr]
     1[Heimdall] == 3. 查看搜索结果 ==> 4[Sonarr / Radarr]
     1[Heimdall] == 4. 查看下载进度 ==> 5[qBittorrentee]
-    1[Heimdall] == 5. 观看 ==> 6[Emby]
+    1[Heimdall] == 5. 观看 ==> 6[Jellyfin]
 ```
 
-[🌟 【Emby客户端】多平台免费优化版 🌟](https://kutt.lckp.top/jOPDvh)
-
-| 名称 | 地址 | 用户名 | 密码 |
-| :---: | :---: | :---: | :---: |
-| Heimdall | `https://ip:60211`  | - | - |
-| Portainer | `http://ip:60212` | atm | atm@20230101 |
-| FlareSolverr | `http://ip:60213` | - | - |
-| Prowlarr | `http://ip:60223` | atm | atm@20230101 |
-| JProxy | `http://ip:60215` | atm | atm@20230101 |
-| Jellyseerr | `http://ip:60216` | atm | atm@20230101 |
-| Radarr | `http://ip:60217` | atm | atm@20230101 |
-| Sonarr | `http://ip:60218` | atm | atm@20230101 |
-| qBittorrent | `http://ip:60219` | atm | atm@20230101 |
-| ChineseSubFinder | `http://ip:60221` | atm | atm@20230101 |
-| Emby | `http://ip:60220` | atm | atm@20230101 |
+|       名称       |       地址       | 用户名 |     密码     |
+| :--------------: | :---------------: | :----: | :----------: |
+|      homarr      | `http://ip:47575` |   atm  |      atm@20230101      |
+|     Jellyfin     | `http://ip:48096` |  atm  | atm@20230101 |
+|   FlareSolverr   | `http://ip:40213` |   -   |      -      |
+|     Prowlarr     | `http://ip:40214` |  atm  | atm@20230101 |
+|      JProxy      | `http://ip:40215` |  atm  | atm@20230101 |
+|    Jellyseerr    | `http://ip:40216` |  atm  | atm@20230101 |
+|      Radarr      | `http://ip:40217` |  atm  | atm@20230101 |
+|      Sonarr      | `http://ip:40218` |  atm  | atm@20230101 |
+|   qBittorrent   | `http://ip:40219` |  atm  | atm@20230101 |
+| ChineseSubFinder | `http://ip:40220` |  atm  | atm@20230101 |
 
 🔥 注意：如需开启外网访问，注意修改对应系统的密码和 API Key，并同时修改其他系统中的配置 🔥
 
@@ -268,3 +265,4 @@ graph LR
 ## 🃏 使用许可
 
 [MIT](https://github.com/LuckyPuppy514/automatic-theater/blob/main/LICENSE) © LuckyPuppy514
+

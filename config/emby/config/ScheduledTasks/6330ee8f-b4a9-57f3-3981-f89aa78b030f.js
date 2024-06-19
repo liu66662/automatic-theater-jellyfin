@@ -1,1 +1,0 @@
-[{"Type":"DailyTrigger","TimeOfDayTicks":72000000000}]

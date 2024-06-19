@@ -1,11 +1,10 @@
+.idea
 logs
 *.log
 .env
 docker-compose.yml
-config/emby/cache
-config/emby/logs
-config/heimdall/log
-config/heimdall/www/logs
+config/jellyfin/cache
+config/jellyfin/logs
 config/jackett/Jackett/log.txt
 config/jellyseerr/logs
 config/qbittorrent/qBittorrent/logs
