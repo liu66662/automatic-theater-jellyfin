@@ -1,7 +1,4 @@
 name: media_system
-networks:
-  macvlan_direct:
-    external: true
 
 services:
   homarr:

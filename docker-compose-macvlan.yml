@@ -1,6 +1,8 @@
 name: media_system
+x-networks:
+  macvlan_name: &macvlan_name ${macvlan_name}
 networks:
-  ${macvlan_name}:
+  *macvlan_name:
     external: true
 
 services:
@@ -128,7 +130,7 @@ services:
     networks:
       default:
         priority: 100
-      ${macvlan_name}:
+      *macvlan_name:
         ipv4_address: ${qbittorrent_ip}
         priority: 1000
 
