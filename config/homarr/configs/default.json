@@ -3,143 +3,336 @@
   "configProperties": {
     "name": "default"
   },
-  "categories": [],
+  "categories": [
+    {
+      "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb",
+      "name": "家庭影院",
+      "position": 1,
+      "type": "category"
+    }
+  ],
   "wrappers": [
     {
       "id": "default",
       "position": 0
+    },
+    {
+      "id": "4d512723-b0f8-44a6-a049-d57a6eacd343",
+      "position": 1
     }
   ],
   "apps": [
     {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a990",
-      "name": "Donate",
-      "url": "https://ko-fi.com/ajnart",
-      "behaviour": {
-        "onClickUrl": "https://ko-fi.com/ajnart",
-        "externalUrl": "https://ko-fi.com/ajnart",
-        "isOpeningNewTab": true,
-        "tooltipDescription": "Please consider making a donation"
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "statusCodes": [
-          "200"
-        ]
-      },
+      "id": "0e30e850-56e9-4bb9-bc7e-2d5d1fc1543e",
+      "name": "Sonarr",
+      "url": "http://sonarr:8989",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/ko-fi.png",
-        "appNameStatus": "normal",
-        "positionAppName": "row-reverse",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "md": {
-          "location": {
-            "x": 4,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "sm": {
-          "location": {
-            "x": 2,
-            "y": 4
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 6,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        }
-      }
-    },
-    {
-      "id": "5df743d9-5cb1-457c-85d2-64ff86855652",
-      "name": "Documentation",
-      "url": "https://homarr.dev",
-      "behaviour": {
-        "onClickUrl": "https://homarr.dev",
-        "externalUrl": "https://homarr.dev",
-        "isOpeningNewTab": true
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "statusCodes": [
-          "200"
-        ]
-      },
-      "appearance": {
-        "iconUrl": "/imgs/logo/logo.png",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/sonarr.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
         "appNameFontSize": 16
       },
-      "integration": {
-        "type": null,
-        "properties": []
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200"
+        ]
+      },
+      "behaviour": {
+        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
+        "isOpeningNewTab": true,
+        "externalUrl": "http://[homarr_hostname]:40218",
+        "tooltipDescription": "剧集索引器"
       },
       "area": {
-        "type": "wrapper",
+        "type": "category",
         "properties": {
-          "id": "default"
+          "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb"
         }
       },
       "shape": {
-        "md": {
+        "lg": {
           "location": {
             "x": 5,
-            "y": 1
+            "y": 2
           },
           "size": {
             "width": 1,
             "height": 1
           }
         },
-        "sm": {
+        "md": {
           "location": {
             "x": 0,
-            "y": 1
+            "y": 23
           },
           "size": {
             "width": 1,
-            "height": 2
+            "height": 1
           }
-        },
+        }
+      },
+      "integration": {
+        "type": "sonarr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": "43cc956985c343998f815949250c2a34"
+          }
+        ]
+      }
+    },
+    {
+      "id": "00a24355-8877-47e2-b9aa-a73f9ca819b5",
+      "name": "qBittorrent",
+      "url": "http://qbittorrent:40219",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/qbittorrent.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200"
+        ]
+      },
+      "behaviour": {
+        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
+        "isOpeningNewTab": true,
+        "externalUrl": "http://192.168.1.250:40219",
+        "tooltipDescription": "BT下载器"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb"
+        }
+      },
+      "shape": {
         "lg": {
           "location": {
             "x": 6,
-            "y": 1
+            "y": 2
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 3,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "qBittorrent",
+        "properties": [
+          {
+            "field": "username",
+            "type": "public",
+            "value": "atm"
+          },
+          {
+            "field": "password",
+            "type": "private",
+            "value": "atm@20230101"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4d46356a-a889-4757-9ea4-bd5da36d068f",
+      "name": "Radarr",
+      "url": "http://radarr:7878",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/radarr.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200"
+        ]
+      },
+      "behaviour": {
+        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
+        "isOpeningNewTab": true,
+        "externalUrl": "http://[homarr_hostname]:40217",
+        "tooltipDescription": "电影索引器"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 6,
+            "y": 3
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 24
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "radarr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": "ca7d9fcbaae64526b24adf580e32fe41"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c30589a5-fc35-45c3-b13f-c595173dc449",
+      "name": "JProxy",
+      "url": "http://jproxy:8117",
+      "appearance": {
+        "iconUrl": "https://raw.githubusercontent.com/LuckyPuppy514/image/main/2023/2023-04-02/logo.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "http://[homarr_hostname]:40215",
+        "tooltipDescription": "代理Prowlarr的请求"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 4,
+            "y": 2
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 1,
+            "y": 23
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "c32fb79c-eae3-4ef0-b5e4-f4836686c923",
+      "name": "Jellyseerr",
+      "url": "http://jellyseerr:5055",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/jellyseerr.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200"
+        ]
+      },
+      "behaviour": {
+        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
+        "isOpeningNewTab": true,
+        "externalUrl": "http://[homarr_hostname]:40216",
+        "tooltipDescription": "媒体库管理应用"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 4,
+            "y": 0
           },
           "size": {
             "width": 2,
             "height": 2
           }
+        },
+        "md": {
+          "location": {
+            "x": 2,
+            "y": 23
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
         }
+      },
+      "integration": {
+        "type": "jellyseerr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": "MTcxODgwOTI3OTEwNmY3NmFhZDI3LWZmMWUtNDgwNS1iMzNlLWI0NzFlZWZhOTFiYg=="
+          }
+        ]
       }
     },
     {
@@ -150,10 +343,10 @@
         "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
         "isOpeningNewTab": true,
         "externalUrl": "http://[homarr_hostname]:48096",
-        "tooltipDescription": "Join our Discord server! We're waiting for your ideas and feedback. "
+        "tooltipDescription": "开源多媒体应用"
       },
       "network": {
-        "enabledStatusChecker": false,
+        "enabledStatusChecker": true,
         "statusCodes": [
           "200"
         ]
@@ -161,18 +354,29 @@
       "appearance": {
         "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/jellyfin.svg",
         "appNameStatus": "normal",
-        "positionAppName": "row-reverse",
+        "positionAppName": "column",
         "lineClampAppName": 1,
         "appNameFontSize": 16
       },
       "integration": {
-        "type": null,
-        "properties": []
+        "type": "jellyfin",
+        "properties": [
+          {
+            "field": "username",
+            "type": "public",
+            "value": "atm"
+          },
+          {
+            "field": "password",
+            "type": "private",
+            "value": "atm@20230101"
+          }
+        ]
       },
       "area": {
-        "type": "wrapper",
+        "type": "category",
         "properties": {
-          "id": "default"
+          "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb"
         }
       },
       "shape": {
@@ -198,98 +402,435 @@
         },
         "lg": {
           "location": {
-            "x": 4,
+            "x": 6,
             "y": 0
           },
           "size": {
             "width": 2,
-            "height": 1
+            "height": 2
           }
         }
       }
     },
     {
-      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a330",
-      "name": "Contribute",
-      "url": "https://github.com/ajnart/homarr",
-      "behaviour": {
-        "onClickUrl": "https://github.com/ajnart/homarr",
-        "externalUrl": "https://github.com/ajnart/homarr",
-        "isOpeningNewTab": true,
-        "tooltipDescription": ""
+      "id": "e53987e7-ae90-436f-a6d9-6c2511dbba99",
+      "name": "Chinesesubfinder",
+      "url": "http://chinesesubfinder:19035",
+      "appearance": {
+        "iconUrl": "https://github.com/ChineseSubFinder/ChineseSubFinder/blob/master/frontend/public/icons/logo.png?raw=true",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
       },
       "network": {
-        "enabledStatusChecker": false,
-        "statusCodes": []
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200"
+        ]
       },
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/github.png",
-        "appNameStatus": "normal",
-        "positionAppName": "row-reverse",
-        "lineClampAppName": 2,
-        "appNameFontSize": 16
+      "behaviour": {
+        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
+        "isOpeningNewTab": true,
+        "externalUrl": "http://[homarr_hostname]:40220",
+        "tooltipDescription": "中文字幕刮削器"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 7,
+            "y": 3
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
       },
       "integration": {
         "type": null,
         "properties": []
+      }
+    },
+    {
+      "id": "4db732ee-78ff-486e-bc65-628843902ad5",
+      "name": "Prowlarr",
+      "url": "http://prowlarr:9696",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/prowlarr.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200"
+        ]
+      },
+      "behaviour": {
+        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
+        "isOpeningNewTab": true,
+        "externalUrl": "http://[homarr_hostname]:40214",
+        "tooltipDescription": "BT种子索引聚合器"
       },
       "area": {
-        "type": "wrapper",
+        "type": "category",
         "properties": {
-          "id": "default"
+          "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb"
         }
       },
       "shape": {
-        "md": {
+        "lg": {
           "location": {
-            "x": 3,
-            "y": 2
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        },
-        "sm": {
-          "location": {
-            "x": 1,
+            "x": 4,
             "y": 3
           },
           "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 5,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "prowlarr",
+        "properties": [
+          {
+            "field": "apiKey",
+            "type": "private",
+            "value": "93fe9143ca004179a54651c4116fb089"
+          }
+        ]
+      }
+    }
+  ],
+  "widgets": [
+    {
+      "id": "da6fc56b-7112-4a8b-b49b-eb890edae8fc",
+      "type": "media-requests-list",
+      "properties": {
+        "replaceLinksWithExternalHost": true,
+        "openInNewTab": true
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 3,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 3,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 4,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "802d041b-cc88-4da8-9e18-f595d1e6782a",
+      "type": "media-requests-stats",
+      "properties": {
+        "replaceLinksWithExternalHost": false,
+        "openInNewTab": true
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
             "width": 2,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 8,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "f809ec8d-1951-4f4a-a3f5-1171f0825b55",
+      "type": "indexer-manager",
+      "properties": {},
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
             "height": 1
           }
         },
         "lg": {
           "location": {
-            "x": 2,
+            "x": 8,
+            "y": 2
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "2f35af9c-c744-47f6-8d2c-2c967b6a3703",
+      "type": "media-server",
+      "properties": {},
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 3,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 3,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 4,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "be725128-b898-4ff6-9ba7-e218be936a30",
+      "type": "torrents-status",
+      "properties": {
+        "displayCompletedTorrents": true,
+        "displayActiveTorrents": true,
+        "speedLimitOfActiveTorrents": 10,
+        "displayStaleTorrents": true,
+        "labelFilterIsWhitelist": true,
+        "labelFilter": [],
+        "displayRatioWithFilter": true,
+        "columnOrdering": true,
+        "rowSorting": true,
+        "columns": [
+          "up",
+          "down",
+          "eta",
+          "progress"
+        ],
+        "nameColumnSize": 4
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
             "y": 0
           },
           "size": {
             "width": 2,
-            "height": 1
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 4
+          },
+          "size": {
+            "width": 8,
+            "height": 2
           }
         }
       }
-    }
-  ],
-  "widgets": [
+    },
+    {
+      "id": "4f863709-24ea-4b65-b841-ca602ecc2a75",
+      "type": "dlspeed",
+      "properties": {},
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "378a300e-f625-4a93-a5a7-b05475ce0fdb"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 8,
+            "y": 4
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    },
     {
       "id": "e3004052-6b83-480e-b458-56e8ccdca5f0",
       "type": "weather",
       "properties": {
         "displayInFahrenheit": false,
         "location": {
-          "name": "Paris",
-          "latitude": 48.85341,
-          "longitude": 2.3488
+          "name": "Hangzhou",
+          "latitude": 30.29365,
+          "longitude": 120.16142
         },
-        "displayCityName": true
+        "displayCityName": true,
+        "displayWeekly": false,
+        "forecastDays": 5
       },
       "area": {
-        "type": "wrapper",
+        "type": "sidebar",
         "properties": {
-          "id": "default"
+          "location": "left"
         }
       },
       "shape": {
@@ -316,7 +857,7 @@
         "lg": {
           "location": {
             "x": 0,
-            "y": 0
+            "y": 1
           },
           "size": {
             "width": 2,
@@ -326,71 +867,13 @@
       }
     },
     {
-      "id": "971aa859-8570-49a1-8d34-dd5c7b3638d1",
-      "type": "date",
+      "id": "35654720-6546-41e0-bf2e-4ed001f43c79",
+      "type": "calendar",
       "properties": {
-        "display24HourFormat": true,
-        "dateFormat": "hide",
-        "enableTimezone": false,
-        "timezoneLocation": {
-          "name": "Paris",
-          "latitude": 48.85341,
-          "longitude": 2.3488
-        },
-        "titleState": "city"
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "sm": {
-          "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "md": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 8,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 1
-          }
-        }
-      }
-    },
-    {
-      "id": "f252768d-9e69-491b-b6b4-8cad04fa30e8",
-      "type": "date",
-      "properties": {
-        "display24HourFormat": true,
-        "dateFormat": "hide",
-        "enableTimezone": true,
-        "timezoneLocation": {
-          "name": "Tokyo",
-          "latitude": 35.6895,
-          "longitude": 139.69171
-        },
-        "titleState": "city"
+        "hideWeekDays": true,
+        "showUnmonitored": false,
+        "radarrReleaseType": "inCinemas",
+        "fontSize": "xs"
       },
       "area": {
         "type": "wrapper",
@@ -405,28 +888,28 @@
             "y": 0
           },
           "size": {
-            "width": 1,
-            "height": 1
+            "width": 2,
+            "height": 2
           }
         },
         "md": {
           "location": {
-            "x": 3,
+            "x": 0,
             "y": 0
           },
           "size": {
-            "width": 1,
-            "height": 1
+            "width": 2,
+            "height": 2
           }
         },
         "lg": {
           "location": {
-            "x": 8,
-            "y": 1
+            "x": 5,
+            "y": 0
           },
           "size": {
-            "width": 2,
-            "height": 1
+            "width": 5,
+            "height": 3
           }
         }
       }
@@ -436,7 +919,8 @@
       "type": "notebook",
       "properties": {
         "showToolbar": true,
-        "content": "<h2><strong>Welcome to Homarr 🚀👋</strong></h2><p>We're glad that you're here! Homarr is a <em>modern </em>and <em>easy to use</em> dashboard that helps you to <strong>organize and manage</strong> your home network from one place. Control is <strong>at your fingertips</strong>.</p><p>We recommend you to read the <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://homarr.dev/docs/getting-started/after-the-installation\">getting started guide</a> first. To edit this board you must enter the edit mode - only administrators can do this. Adding an app is the first step you should take. You can do this by clicking the <code>Add tile</code> button at the top right and select <code>App</code>. After you provided an internal URL, external URL and selected an icon you can drag it around when holding down the left mouse button. Make it bigger or smaller using the drag icon at the bottom right. When you're happy with it's position, you <strong>must exit edit mode to save your board</strong>. Adding widgets works the same way but may require additional configuration - read the documentation for more information.</p><p>To remove this widget, you must log in to your administrator account and click on the menu to delete it.</p><p><strong><u>Your TODO list:</u></strong></p><ul data-type=\"taskList\"><li data-checked=\"false\" data-type=\"taskItem\"><label><input type=\"checkbox\"><span></span></label><div><p>Read the <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://homarr.dev\">documentation</a></p></div></li><li data-checked=\"false\" data-type=\"taskItem\"><label><input type=\"checkbox\"><span></span></label><div><p>Add your <em>first app</em></p></div></li><li data-checked=\"false\" data-type=\"taskItem\"><label><input type=\"checkbox\"><span></span></label><div><p><em>Resize </em>and <em>drag</em> your app to a different position</p></div></li><li data-checked=\"false\" data-type=\"taskItem\"><label><input type=\"checkbox\"><span></span></label><div><p>Add the <em>clock widget</em> to your dashboard</p></div></li><li data-checked=\"false\" data-type=\"taskItem\"><label><input type=\"checkbox\"><span></span></label><div><p>Create a <em>new user</em></p></div></li></ul>"
+        "content": "<h2><strong>欢迎使用 🚀👋</strong></h2><p>此项目Fork自<a rel=\"noopener noreferrer nofollow\" href=\"https://github.com/LuckyPuppy514/automatic-theater\">https://github.com/LuckyPuppy514/automatic-theater</a>，主要改动如下：</p><ul><li><p>主页面板由Heimdall替换为Homarr</p></li><li><p>媒体服务由Emby替换为Jellyfin（nyanmisaka版本）</p></li><li><p>修改所有应用间调用地址为docker容器名，不再依赖固定IP</p></li><li><p>支持qb使用macvlan网络，独立IP用于控制避免占用梯子流量</p></li><li><p>新增52BT索引，能够支持国产电视剧下载</p></li></ul><p></p><p><strong>需要自己额外修改的部分：</strong></p><ul><li><p>JProxy中TMDB的api密钥需要自行申请填写</p></li><li><p>BT下载器udp端口需要在路由器端口转发暴露到外网</p></li></ul>",
+        "allowReadOnlyCheck": true
       },
       "area": {
         "type": "wrapper",
@@ -468,11 +952,119 @@
         "lg": {
           "location": {
             "x": 0,
-            "y": 1
+            "y": 0
           },
           "size": {
-            "width": 6,
+            "width": 5,
             "height": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "971aa859-8570-49a1-8d34-dd5c7b3638d1",
+      "type": "date",
+      "properties": {
+        "display24HourFormat": true,
+        "dateFormat": "dddd, MMMM D",
+        "enableTimezone": false,
+        "timezoneLocation": {
+          "name": "Paris",
+          "latitude": 48.85341,
+          "longitude": 2.3488
+        },
+        "titleState": "city",
+        "timezone": "Asia/Shanghai",
+        "customTitle": ""
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "98e7ac58-8a04-4e83-b070-ef255c40ccd7",
+      "type": "rss",
+      "properties": {
+        "rssFeedUrl": [
+          "https://www.zhihu.com/rss"
+        ],
+        "refreshInterval": 30,
+        "dangerousAllowSanitizedItemContent": true,
+        "textLinesClamp": 5,
+        "sortByPublishDateAscending": true,
+        "sortPostsWithoutPublishDateToTheTop": false,
+        "maximumAmountOfPosts": 11
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 2,
+            "height": 10
           }
         }
       }
@@ -487,10 +1079,10 @@
     },
     "customization": {
       "layout": {
-        "enabledLeftSidebar": false,
+        "enabledLeftSidebar": true,
         "enabledRightSidebar": false,
         "enabledDocker": false,
-        "enabledPing": false,
+        "enabledPing": true,
         "enabledSearchbar": true
       },
       "pageTitle": "Homarr ⭐️",
@@ -508,7 +1100,11 @@
         "columnCountSmall": 3,
         "columnCountMedium": 6,
         "columnCountLarge": 10
-      }
+      },
+      "backgroundImageAttachment": "fixed",
+      "backgroundImageRepeat": "no-repeat",
+      "backgroundImageSize": "cover",
+      "metaTitle": ""
     },
     "access": {
       "allowGuests": false

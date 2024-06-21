@@ -122,6 +122,10 @@ services:
     volumes:
       - ${CONFIG_PATH}/qbittorrent:/config
       - ${MEDIA_PATH}:/media
+    ports:
+      - 40219:40219
+      - 6881:6881
+      - 6881:6881/udp
 
   chinesesubfinder:
     image: allanpk716/chinesesubfinder:latest-lite

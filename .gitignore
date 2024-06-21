@@ -4,7 +4,6 @@ logs
 .env
 docker-compose.yml
 config/jellyfin/cache
-config/jellyfin/logs
 config/jackett/Jackett/log.txt
 config/jellyseerr/logs
 config/qbittorrent/qBittorrent/logs
