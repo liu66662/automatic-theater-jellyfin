@@ -1,0 +1,15 @@
+{
+  "category": "Metadata",
+  "changelog": "### New features and improvements ###\n- Add automatic invalidation of credentials (#128) @MBR-0001\n- Add handling for .strm files (#124) @MBR-0001\n\n### Bug Fixes ###\n- Add automatic invalidation of credentials (#128) @MBR-0001\n\n### CI \u0026 build changes ###\n- fix: meta ci workflows (#106) @h1dden-da3m0n",
+  "description": "Download subtitles from the internet to use with your media files. (Requires configuration)",
+  "guid": "4b9ed42f-5185-48b5-9803-6ff2989014c4",
+  "name": "Open Subtitles",
+  "overview": "Download subtitles for your media",
+  "owner": "jellyfin",
+  "targetAbi": "10.8.10.0",
+  "timestamp": "2023-07-03T01:31:26.0000000Z",
+  "version": "19.0.0.0",
+  "status": "Active",
+  "autoUpdate": true,
+  "imagePath": "/config/plugins/Open Subtitles_19.0.0.0/jellyfin-plugin-opensubtitles.png"
+}

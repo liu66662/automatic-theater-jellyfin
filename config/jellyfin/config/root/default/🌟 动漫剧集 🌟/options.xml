@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LibraryOptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EnablePhotos>true</EnablePhotos>
+  <EnableRealtimeMonitor>true</EnableRealtimeMonitor>
+  <EnableChapterImageExtraction>false</EnableChapterImageExtraction>
+  <ExtractChapterImagesDuringLibraryScan>false</ExtractChapterImagesDuringLibraryScan>
+  <PathInfos>
+    <MediaPathInfo>
+      <Path>/media/anime</Path>
+    </MediaPathInfo>
+  </PathInfos>
+  <SaveLocalMetadata>true</SaveLocalMetadata>
+  <EnableAutomaticSeriesGrouping>true</EnableAutomaticSeriesGrouping>
+  <EnableEmbeddedTitles>false</EnableEmbeddedTitles>
+  <EnableEmbeddedEpisodeInfos>false</EnableEmbeddedEpisodeInfos>
+  <AutomaticRefreshIntervalDays>30</AutomaticRefreshIntervalDays>
+  <PreferredMetadataLanguage>zh</PreferredMetadataLanguage>
+  <MetadataCountryCode>CN</MetadataCountryCode>
+  <SeasonZeroDisplayName>Specials</SeasonZeroDisplayName>
+  <MetadataSavers>
+    <string>Nfo</string>
+  </MetadataSavers>
+  <DisabledLocalMetadataReaders />
+  <LocalMetadataReaderOrder>
+    <string>Nfo</string>
+  </LocalMetadataReaderOrder>
+  <DisabledSubtitleFetchers />
+  <SubtitleFetcherOrder>
+    <string>Open Subtitles</string>
+  </SubtitleFetcherOrder>
+  <SkipSubtitlesIfEmbeddedSubtitlesPresent>true</SkipSubtitlesIfEmbeddedSubtitlesPresent>
+  <SkipSubtitlesIfAudioTrackMatches>false</SkipSubtitlesIfAudioTrackMatches>
+  <SubtitleDownloadLanguages>
+    <string>chi</string>
+    <string>chi</string>
+    <string>chi</string>
+  </SubtitleDownloadLanguages>
+  <RequirePerfectSubtitleMatch>true</RequirePerfectSubtitleMatch>
+  <SaveSubtitlesWithMedia>true</SaveSubtitlesWithMedia>
+  <AutomaticallyAddToCollection>false</AutomaticallyAddToCollection>
+  <AllowEmbeddedSubtitles>AllowAll</AllowEmbeddedSubtitles>
+  <TypeOptions>
+    <TypeOptions>
+      <Type>Series</Type>
+      <MetadataFetchers>
+        <string>Missing Episode Fetcher</string>
+        <string>TheMovieDb</string>
+        <string>TheTVDB</string>
+      </MetadataFetchers>
+      <MetadataFetcherOrder>
+        <string>Missing Episode Fetcher</string>
+        <string>TheMovieDb</string>
+        <string>TheTVDB</string>
+        <string>The Open Movie Database</string>
+      </MetadataFetcherOrder>
+      <ImageFetchers>
+        <string>Fanart</string>
+        <string>TheMovieDb</string>
+        <string>TheTVDB</string>
+      </ImageFetchers>
+      <ImageFetcherOrder>
+        <string>Fanart</string>
+        <string>TheMovieDb</string>
+        <string>TheTVDB</string>
+      </ImageFetcherOrder>
+      <ImageOptions>
+        <ImageOption>
+          <Type>Primary</Type>
+          <Limit>1</Limit>
+          <MinWidth>0</MinWidth>
+        </ImageOption>
+        <ImageOption>
+          <Type>Art</Type>
+          <Limit>0</Limit>
+          <MinWidth>0</MinWidth>
+        </ImageOption>
+        <ImageOption>
+          <Type>BoxRear</Type>
+          <Limit>0</Limit>
+          <MinWidth>0</MinWidth>
+        </ImageOption>
+        <ImageOption>
+          <Type>Banner</Type>
+          <Limit>1</Limit>
+          <MinWidth>0</MinWidth>
+        </ImageOption>
+        <ImageOption>
+          <Type>Box</Type>
+          <Limit>0</Limit>
+          <MinWidth>0</MinWidth>
+        </ImageOption>
+        <ImageOption>
+          <Type>Disc</Type>
+          <Limit>0</Limit>
+          <MinWidth>0</MinWidth>
+        </ImageOption>
+        <ImageOption>
+          <Type>Logo</Type>
+          <Limit>1</Limit>
+          <MinWidth>0</MinWidth>
+        </ImageOption>
+        <ImageOption>
+          <Type>Menu</Type>
+          <Limit>0</Limit>
+          <MinWidth>0</MinWidth>
+        </ImageOption>
+        <ImageOption>
+          <Type>Thumb</Type>
+          <Limit>1</Limit>
+          <MinWidth>0</MinWidth>
+        </ImageOption>
+        <ImageOption>
+          <Type>Backdrop</Type>
+          <Limit>1</Limit>
+          <MinWidth>1280</MinWidth>
+        </ImageOption>
+      </ImageOptions>
+    </TypeOptions>
+    <TypeOptions>
+      <Type>Season</Type>
+      <MetadataFetchers>
+        <string>TheMovieDb</string>
+      </MetadataFetchers>
+      <MetadataFetcherOrder>
+        <string>TheMovieDb</string>
+      </MetadataFetcherOrder>
+      <ImageFetchers>
+        <string>Fanart</string>
+        <string>TheMovieDb</string>
+        <string>TheTVDB</string>
+      </ImageFetchers>
+      <ImageFetcherOrder>
+        <string>Fanart</string>
+        <string>TheMovieDb</string>
+        <string>TheTVDB</string>
+      </ImageFetcherOrder>
+      <ImageOptions />
+    </TypeOptions>
+    <TypeOptions>
+      <Type>Episode</Type>
+      <MetadataFetchers>
+        <string>TheMovieDb</string>
+        <string>TheTVDB</string>
+      </MetadataFetchers>
+      <MetadataFetcherOrder>
+        <string>TheMovieDb</string>
+        <string>TheTVDB</string>
+        <string>The Open Movie Database</string>
+      </MetadataFetcherOrder>
+      <ImageFetchers>
+        <string>TheMovieDb</string>
+        <string>TheTVDB</string>
+        <string>Embedded Image Extractor</string>
+        <string>Screen Grabber</string>
+      </ImageFetchers>
+      <ImageFetcherOrder>
+        <string>TheMovieDb</string>
+        <string>TheTVDB</string>
+        <string>The Open Movie Database</string>
+        <string>Embedded Image Extractor</string>
+        <string>Screen Grabber</string>
+      </ImageFetcherOrder>
+      <ImageOptions />
+    </TypeOptions>
+  </TypeOptions>
+</LibraryOptions>
