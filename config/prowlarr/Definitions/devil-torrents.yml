@@ -60,6 +60,8 @@ settings:
     options:
       POLISH: POLISH
       MULTi POLISH: MULTi POLISH
+  - name: info_flaresolverr
+    type: info_flaresolverr
 
 login:
   path: logowanie

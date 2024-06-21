@@ -8,31 +8,13 @@ encoding: UTF-8
 links:
   - https://glodls.to/
   - https://gtso.cc/
-  - https://glotorrents.unblockit.date/
-  - https://glotorrents.mrunblock.bond/
-  - https://glodls.unblockninja.com/
-  - https://glotorrents.nocensor.cloud/
+  - https://glotorrents.unblockit.black/
 legacylinks:
   - https://glodls.rocks/
   - https://gtdb.to/
-  - https://glotorrents.nocensor.biz/
-  - https://glotorrents.nocensor.sbs/
-  - https://glotorrents.unblockit.nz/
-  - https://glotorrents.nocensor.world/
-  - https://glotorrents.unblockit.page/
-  - https://glotorrents.unblockit.pet/
-  - https://glotorrents.nocensor.lol/
-  - https://glotorrents.unblockit.ink/
-  - https://glotorrents.nocensor.art/
-  - https://glotorrents.unblockit.bio/
-  - https://glotorrents.unblockit.boo/
-  - https://glotorrents.mrunblock.guru/
-  - https://glotorrents.unblockit.click/
   - https://glotorrents.unblockit.asia/
   - https://glotorrents.unblockit.mov/
-  - https://glotorrents.mrunblock.life/
   - https://glotorrents.unblockit.rsvp/
-  - https://glotorrents.nocensor.click/
   - https://gtdb.cc/
   - https://glotorrents.unblockit.vegas/
   - https://glotorrents.unblockit.esq/
@@ -40,6 +22,16 @@ legacylinks:
   - https://glotorrents.unblockit.foo/
   - https://glotorrents.unblockit.ing/
   - https://www.gtdb.to/
+  - https://glotorrents.mrunblock.bond/
+  - https://glotorrents.nocensor.cloud/
+  - https://glotorrents.unblockit.date/
+  - https://glotorrents.unblockit.dad/
+  - https://glotorrents.unblockit.africa/
+  - https://glotorrents.unblockit.casa/
+  - https://glotorrents.unblockit.sbs/
+  - https://glotorrents.unblockit.ong/
+  - https://glodls.unblockninja.com/ # blank
+  - https://glodls.ninjaproxy1.com/ # blank
 
 caps:
   categorymappings:
@@ -111,14 +103,15 @@ search:
     after: 1
 
   fields:
-    category:
+    category_optional:
       selector: a[href^="/search.php?cat="]
       attribute: href
       optional: true
-      default: 33
       filters:
         - name: querystring
           args: cat
+    category:
+      text: "{{ if .Result.category_optional }}{{ .Result.category_optional }}{{ else }}33{{ end }}"
     title:
       selector: td:nth-child(2) a[title]
       attribute: title

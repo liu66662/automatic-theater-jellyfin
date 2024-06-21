@@ -38,6 +38,10 @@ settings:
     type: checkbox
     label: Search freeleech only
     default: false
+  - name: single_file_release_use_filename
+    type: checkbox
+    label: Use filename as title for single file releases
+    default: true
   - name: sort
     type: select
     label: Sort requested from site
@@ -66,8 +70,8 @@ login:
 
 search:
   paths:
-    # https://github.com/HDInnovations/UNIT3D-Community-Edition/wiki/Torrent-API-(UNIT3D-v7.0.0)
-    # https://github.com/HDInnovations/UNIT3D-Community-Edition/blob/master/app/Http/Controllers/API/TorrentController.php#L349
+    # https://github.com/HDInnovations/UNIT3D-Community-Edition/wiki/Torrent-API-(UNIT3D-v8.x.x)
+    # https://github.com/HDInnovations/UNIT3D-Community-Edition/blob/master/app/Http/Controllers/API/TorrentController.php#L476
     - path: "/api/torrents/filter"
       response:
         type: json
@@ -100,8 +104,15 @@ search:
   fields:
     category:
       selector: category_id
-    title:
+    title_optional:
       selector: name
+    title_filename:
+      selector: "files[0].name"
+      optional: true
+    files:
+      selector: num_file
+    title:
+      text: "{{ if and (.Config.single_file_release_use_filename) (eq .Result.files \"1\") (.Result.title_filename) }}{{ .Result.title_filename }}{{ else }}{{ .Result.title_optional }}{{ end }}"
     details:
       selector: details_link
     download:
@@ -130,8 +141,6 @@ search:
           args: [" & ", "_&_"]
     description:
       text: "{{ .Result.genre }}"
-    files:
-      selector: num_file
     seeders:
       selector: seeders
     leechers:
@@ -167,4 +176,4 @@ search:
 # Maintain global ratio above 0.5 or downloads will get disabled. No MST.
     minimumratio:
       text: 0.51
-# json UNIT3D 7.1.2
+# json UNIT3D 8.1.3

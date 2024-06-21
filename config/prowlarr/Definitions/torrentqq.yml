@@ -7,23 +7,23 @@ type: public
 encoding: UTF-8
 followredirect: true
 links:
-  - https://torrentqq291.com/
+  - https://torrentqq320.com/
 legacylinks:
-  - https://torrentqq276.com/
-  - https://torrentqq277.com/
-  - https://torrentqq278.com/
-  - https://torrentqq279.com/
-  - https://torrentqq280.com/
-  - https://torrentqq281.com/
-  - https://torrentqq282.com/
-  - https://torrentqq283.com/
-  - https://torrentqq284.com/
-  - https://torrentqq285.com/
-  - https://torrentqq286.com/
-  - https://torrentqq287.com/
-  - https://torrentqq288.com/
-  - https://torrentqq289.com/
-  - https://torrentqq290.com/
+  - https://torrentqq305.com/
+  - https://torrentqq306.com/
+  - https://torrentqq307.com/
+  - https://torrentqq308.com/
+  - https://torrentqq309.com/
+  - https://torrentqq310.com/
+  - https://torrentqq311.com/
+  - https://torrentqq312.com/
+  - https://torrentqq313.com/
+  - https://torrentqq314.com/
+  - https://torrentqq315.com/
+  - https://torrentqq316.com/
+  - https://torrentqq317.com/
+  - https://torrentqq318.com/
+  - https://torrentqq319.com/
 
 caps:
   categorymappings:
@@ -44,10 +44,8 @@ caps:
     music-search: [q]
 
 settings:
-  - name: flaresolverr
-    type: info
-    label: FlareSolverr
-    default: This site may use Cloudflare DDoS Protection, therefore Prowlarr requires FlareSolverr to access it.
+  - name: info_flaresolverr
+    type: info_flaresolverr
 
 download:
   infohash:

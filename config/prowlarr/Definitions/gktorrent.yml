@@ -1,50 +1,46 @@
 ---
 id: gktorrent
 name: GkTorrent
-description: "GkTorrent is a French Public site for TV / MOVIES / GENERAL"
+description: "GkTorrent is a French Semi-Private site for TV / MOVIES / GENERAL"
 language: fr-FR
-type: public
+type: semi-private
 encoding: UTF-8
 followredirect: true
 # to fetch current domain use https://www.protege-torrent.com/Gktorrent
 links:
-  - https://www.gktorrent.fi/
-  - https://gktorrent.nocensor.cloud/
-  - https://gktorrent.mrunblock.bond/
+  - https://www.gktorrent.tw/
 legacylinks:
   - https://www.rantop.org/
-  - https://www.gktorrent.tv/
-  - https://www.gktorrent.net/
-  - https://www.gktorrent.biz/
-  - https://www.gktorrent.io/
-  - https://www.gktorrent.pw/
-  - https://wvw.gktorrent.pw/
-  - https://vww.gktorrent.pw/
-  - https://www.gktorrent.cc/
-  - https://gktorrent.nocensor.space/
-  - https://www.gktorrents.com/
-  - https://gktorrent.nocensor.work/
-  - https://www.gktorrents.net/
-  - https://gktorrent.nocensor.biz/
-  - https://www.gktorrents.org/
-  - https://gktorrent.nocensor.sbs/
-  - https://gktorrent.nocensor.world/
-  - https://gktorrent.nocensor.lol/
-  - https://gktorrent.mrunblock.guru/
-  - https://gktorrent.mrunblock.life/ # cloudflare 403
+  - https://www.torrent.ws/
   - https://gktorrent.nocensor.click/
-  - https://www.gktorrents.cc/
   - https://www.gktorrent.ac/
   - https://www.gktorrent.ph/
   - https://www.gktorrent.vc/
+  - https://www.gktorrent.mx/
+  - https://www.gktorrent.fi/
+  - https://www.gktorrent.wf/
+  - https://gktorrent.nocensor.cloud/
+  - https://gktorrent.mrunblock.bond/
+  - https://www.gktorrent.wtf/
+  - https://www.gktorrent.vg/
+  - https://www.gktorrent.lol/
+  - https://www.gktorrent.sh/
+  - https://www.gktorrent.eu/
+  - https://www.gktorrent.xyz/
+  - https://www.gktorrent.pm/
 
 caps:
   categorymappings:
     - {id: Films, cat: Movies, desc: "Movies"}
+    - {id: Vidéos, cat: Movies, desc: "Vidéos"}
     - {id: Animes, cat: TV/Anime, desc: "Anime"}
-    - {id: Séries, cat: TV, desc: "TV"}
+    - {id: Séries, cat: TV, desc: "TV Series"}
+    - {id: Spectacles, cat: TV, desc: "TV Shows"}
+    - {id: Documentaires, cat: TV/Documentary, desc: "Documentaries"}
+    - {id: Sports, cat: TV/Sport, desc: "Sport"}
     - {id: Musiques, cat: Audio, desc: "Music"}
     - {id: Ebooks, cat: Books, desc: "Books"}
+    - {id: Livres, cat: Books, desc: "Books"}
     - {id: Logiciels, cat: PC, desc: "Software"}
     - {id: Jeux-PC, cat: PC/Games, desc: "PC Games"}
     - {id: Jeux-Consoles, cat: Console/XBox 360, desc: "Console Games"}
@@ -59,6 +55,12 @@ caps:
   allowrawsearch: true
 
 settings:
+  - name: username
+    type: text
+    label: Username
+  - name: password
+    type: password
+    label: Password
   - name: multilang
     type: checkbox
     label: Replace MULTi by another language in release name
@@ -79,6 +81,22 @@ settings:
     label: Replace VOSTFR and SUBFRENCH with ENGLISH
     default: false
 
+login:
+  path: login
+  method: form
+  form: form#formLogin
+  inputs:
+    user: "{{ .Config.username }}"
+    pass: "{{ .Config.password }}"
+    submit: submit
+  error:
+    - selector: :root:contains("Pseudo ou Mot de passe erron")
+      message:
+        text: "Pseudo ou Mot de passe erroné"
+  test:
+    path: /
+    selector: a[href="/index.php?page=logout"]
+
 download:
   selectors:
     - selector: a[href^="magnet:?"]
@@ -87,6 +105,7 @@ download:
       filters:
         - name: regexp
           args: "\\s'(magnet:\\?.+?)';"
+
 search:
   paths:
     - path: "{{ if .Keywords }}recherche/{{ .Keywords }}{{ else }}{{ end }}"
@@ -98,7 +117,7 @@ search:
       args: ["(?i)(S)(\\d{1,3})$", "saison $2"]
 
   rows:
-    selector: table.table-hover > tbody > tr:has(a[href*=torrent])
+    selector: table.table-hover > tbody > tr:has(td a[href])
 
   fields:
     category:
@@ -126,9 +145,11 @@ search:
     details:
       selector: td:nth-child(1) a
       attribute: href
+      filters:
+        - name: regexp
+          args: (/?torrent/\d+)
     download:
-      selector: td:nth-child(1) a
-      attribute: href
+      text: "{{ .Result.details }}"
     size:
       selector: td:nth-child(2)
     date:

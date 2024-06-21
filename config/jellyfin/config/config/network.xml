@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <NetworkConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <RequireHttps>true</RequireHttps>
+  <RequireHttps>false</RequireHttps>
   <CertificatePath>/cert/aliang-zh.top/cert.pfx</CertificatePath>
   <CertificatePassword>zh950928</CertificatePassword>
   <BaseUrl />
   <PublicHttpsPort>8920</PublicHttpsPort>
-  <HttpServerPortNumber>18096</HttpServerPortNumber>
-  <HttpsPortNumber>8096</HttpsPortNumber>
-  <EnableHttps>true</EnableHttps>
+  <HttpServerPortNumber>8096</HttpServerPortNumber>
+  <HttpsPortNumber>18096</HttpsPortNumber>
+  <EnableHttps>false</EnableHttps>
   <PublicPort>8096</PublicPort>
   <UPnPCreateHttpPortMap>false</UPnPCreateHttpPortMap>
   <UDPPortRange />

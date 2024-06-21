@@ -1,18 +1,14 @@
 ---
 id: zetorrents
 name: zetorrents
-description: "zetorrents is a FRENCH Public site for MOVIES / TV / GENERAL"
+description: "zetorrents is a FRENCH Semi-Private site for MOVIES / TV / GENERAL"
 language: fr-FR
-type: public
+type: semi-private
 encoding: UTF-8
 # to fetch current domain use https://www.protege-torrent.com/Zetorrents
 links:
   - https://www.zetorrents.pw/
-  - https://zetorrents.mrunblock.bond/
-  - https://zetorrents.nocensor.cloud/
 legacylinks:
-  - https://www.zetorrents.co/
-  - https://www.zetorrents.io/
   - https://wvw.zetorrents.io/
   - https://vww.zetorrents.io/
   - https://wwv.zetorrents.io/
@@ -23,14 +19,10 @@ legacylinks:
   - https://www.zetorrents.tv/
   - https://www.zetorrents.bz/
   - https://www.zetorrents.nl/
-  - https://zetorrents.nocensor.world/
   - https://www.zetorrents.biz/
-  - https://zetorrents.nocensor.lol/
-  - https://zetorrents.nocensor.art/
   - https://www.zetorrents.ch/
-  - https://zetorrents.mrunblock.guru/
-  - https://zetorrents.mrunblock.life/
-  - https://zetorrents.nocensor.click/
+  - https://zetorrents.mrunblock.bond/
+  - https://zetorrents.nocensor.cloud/
 
 caps:
   categories:
@@ -43,6 +35,12 @@ caps:
   allowrawsearch: true
 
 settings:
+  - name: username
+    type: text
+    label: Username
+  - name: password
+    type: password
+    label: Password
   - name: info_8000
     type: info
     label: About zetorrents Categories
@@ -67,6 +65,22 @@ settings:
     label: Replace VOSTFR and SUBFRENCH with ENGLISH
     default: false
 
+login:
+  path: login
+  method: form
+  form: form#formLogin
+  inputs:
+    user: "{{ .Config.username }}"
+    pass: "{{ .Config.password }}"
+    submit: submit
+  error:
+    - selector: :root:contains("Pseudo ou Mot de passe incorrect")
+      message:
+        text: "Pseudo ou Mot de passe incorrect"
+  test:
+    path: /
+    selector: a[href="/index.php?page=logout"]
+
 download:
   infohash:
     hash:
@@ -76,10 +90,11 @@ download:
         - name: regexp
           args: ([A-F|a-f|0-9]{40})
     title:
-      selector: ul#breadcrumbs > li:nth-child(3) > h2
+      selector: div.tabs-title
       filters:
         - name: trim
         - name: validfilename
+
 search:
   paths:
     - path: "{{ if .Keywords }}recherche/{{ .Keywords }}{{ else }}{{ end }}"
@@ -98,10 +113,7 @@ search:
       text: Other
     title_phase1:
       selector: a[href^="/torrent/"]
-      attribute: title
       filters:
-        - name: replace
-          args: [" en Torrent", ""]
         - name: replace
           args: ["WEBRIP", "WEBDL"]
         - name: re_replace

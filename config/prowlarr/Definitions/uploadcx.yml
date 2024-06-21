@@ -1,7 +1,7 @@
 ---
 id: uploadcx
 name: upload.cx
-description: "upload.cx is a Private Torrent Tracker for HD MOVIES / TV"
+description: "upload.cx (ULCX) is a Private Torrent Tracker for MOVIES / TV"
 language: en-US
 type: private
 encoding: UTF-8
@@ -10,8 +10,8 @@ links:
 
 caps:
   categorymappings:
-    - {id: 1, cat: Movies, desc: "Movie"}
-    - {id: 2, cat: TV, desc: "TV Show"}
+    - {id: 1, cat: Movies, desc: "Movies"}
+    - {id: 2, cat: TV, desc: "TV"}
 
   modes:
     search: [q]
@@ -30,6 +30,10 @@ settings:
     type: checkbox
     label: Search freeleech only
     default: false
+  - name: single_file_release_use_filename
+    type: checkbox
+    label: Use filename as title for single file releases
+    default: true
   - name: sort
     type: select
     label: Sort requested from site
@@ -46,6 +50,10 @@ settings:
     options:
       desc: desc
       asc: asc
+  - name: info_activity
+    type: info
+    label: Account Inactivity
+    default: "All members must engage with the site, through either logging in or navigating upload.cx. Any account that remains inactive for over two months will be deactivated and pruned after an additional two months of deactivation."
 
 login:
   path: /api/torrents
@@ -58,8 +66,8 @@ login:
 
 search:
   paths:
-    # https://github.com/HDInnovations/UNIT3D-Community-Edition/wiki/Torrent-API-(UNIT3D-v7.0.0)
-    # https://github.com/HDInnovations/UNIT3D-Community-Edition/blob/master/app/Http/Controllers/API/TorrentController.php#L349
+    # https://github.com/HDInnovations/UNIT3D-Community-Edition/wiki/Torrent-API-(UNIT3D-v8.x.x)
+    # https://github.com/HDInnovations/UNIT3D-Community-Edition/blob/master/app/Http/Controllers/API/TorrentController.php#L476
     - path: "/api/torrents/filter"
       response:
         type: json
@@ -79,7 +87,7 @@ search:
     "free[]": "{{ if .Config.freeleech }}100{{ else }}{{ end }}"
     sortField: "{{ .Config.sort }}"
     sortDirection: "{{ .Config.type }}"
-    perPage: 100
+    perPage: 25
 
   keywordsfilters:
     - name: re_replace
@@ -92,8 +100,15 @@ search:
   fields:
     category:
       selector: category_id
-    title:
+    title_optional:
       selector: name
+    title_filename:
+      selector: "files[0].name"
+      optional: true
+    files:
+      selector: num_file
+    title:
+      text: "{{ if and (.Config.single_file_release_use_filename) (eq .Result.files \"1\") (.Result.title_filename) }}{{ .Result.title_filename }}{{ else }}{{ .Result.title_optional }}{{ end }}"
     details:
       selector: details_link
     download:
@@ -122,8 +137,6 @@ search:
           args: [" & ", "_&_"]
     description:
       text: "{{ .Result.genre }}"
-    files:
-      selector: num_file
     seeders:
       selector: seeders
     leechers:
@@ -156,10 +169,10 @@ search:
       case:
         False: 1 # normal
         True: 2 # double
-# global MR is 0.4 but torrents must be seeded for 7 days regardless of ratio
+# global MR is 0.4 but torrents must be seeded for 2 days regardless of ratio
 #    minimumratio:
 #      text: 0.4
     minimumseedtime:
-      # 7 day (as seconds = 7 x 24 x 60 x 60)
-      text: 604800
-# json UNIT3D 7.1.3
+      # 2 day (as seconds = 2 x 24 x 60 x 60)
+      text: 172800
+# json UNIT3D 8.0.2 (custom)

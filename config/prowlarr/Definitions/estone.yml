@@ -6,7 +6,9 @@ language: hu-HU
 type: private
 encoding: UTF-8
 links:
-  - http://estone.cc/ # site does not support https ERR_CONNECTION_REFUSED
+  - https://estone.cc/
+legacylinks:
+  - http://estone.cc/
 
 caps:
   categorymappings:
@@ -66,6 +68,10 @@ settings:
     options:
       DESC: desc
       ASC: asc
+  - name: info_activity
+    type: info
+    label: Account Inactivity
+    default: "Anyone who does not enter the site for 180 days will be automatically deleted!"
 
 login:
   path: login.php
@@ -100,7 +106,7 @@ search:
     # does not support imdbid search and does not return imdb link in results
 
   rows:
-    selector: "body > div[id^=\"torrent_\"]{{ if .Config.freeleech }}:has(img[src=\"pic/free.png\"]){{ else }}{{ end }}"
+    selector: "body > div[id=\"felsohatter2\"] > div[id^=\"torrent_\"]{{ if .Config.freeleech }}:has(img[src=\"pic/free.png\"]){{ else }}{{ end }}"
 
   fields:
     title:

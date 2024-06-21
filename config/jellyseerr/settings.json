@@ -1,9 +1,9 @@
 {
- "clientId": "3d3be6fc-db1e-4e3b-8bf4-632552e2bdd8",
- "vapidPrivate": "wUv6SOd-w-ef1NamClSzJIeTGqpkCOl9KwojCwgGOK0",
- "vapidPublic": "BPuqT0J_Q-QwOF2kmEZOM8ldnREWeLsAiQwVSsuoUpuYkUEY8trIP4KumGfCeLJ0yzOxp9c02MolYClLTjjWhWE",
+ "clientId": "39866889-a930-44de-b13b-ac7c01f90c12",
+ "vapidPrivate": "7et_VONlbtyIwJZc8biwo0ReoZ6VRLvyN622-sUrmto",
+ "vapidPublic": "BCwOKIwFjrPwO18C4imG6Hy4P0OnQKxbv4eWvtpRwOjMw7Qvo-416MJyCqe44qb1OfIi4xP3JaCCT9bY67H-WQA",
  "main": {
-  "apiKey": "MTY2MTA1MTg2MTIxMWFmYmFhMjdjLTU5NDYtNDVjYi05OGNjLTcyZmRiYmNmOWE2YSk=",
+  "apiKey": "MTcxODgwOTI3OTEwNmY3NmFhZDI3LWZmMWUtNDgwNS1iMzNlLWI0NzFlZWZhOTFiYg==",
   "applicationTitle": "Jellyseerr",
   "applicationUrl": "",
   "csrfProtection": false,
@@ -31,45 +31,45 @@
   "libraries": []
  },
  "jellyfin": {
-  "name": "",
-  "hostname": "http://172.128.2.20:8096",
+  "name": "aliang-nas",
+  "hostname": "http://jellyfin:8096",
   "externalHostname": "",
+  "jellyfinForgotPasswordUrl": "",
   "libraries": [
    {
-    "id": "11",
+    "id": "4db246bf274d31ae2aee0a9e1b22b9dc",
     "name": "🌟 动漫剧集 🌟",
     "enabled": true,
     "type": "show"
    },
    {
-    "id": "5",
+    "id": "6a3d889fdf34f233e7fee64b5814137b",
     "name": "🎞️ 电影 🎞️",
     "enabled": true,
     "type": "movie"
    },
    {
-    "id": "9",
+    "id": "a8456c3ef2734fc6d749cc623fbabcb7",
     "name": "📺 剧集 📺",
     "enabled": true,
     "type": "show"
    }
   ],
-  "serverId": "66480f1e473348fd82ffc94a989c6eb4"
+  "serverId": "b2146c36b79c4525bdbc9e147a6c622f"
  },
  "tautulli": {},
  "radarr": [
   {
    "name": "Radarr",
-   "hostname": "172.128.2.17",
+   "hostname": "radarr",
    "port": 7878,
    "apiKey": "ca7d9fcbaae64526b24adf580e32fe41",
    "useSsl": false,
-   "baseUrl": "",
    "activeProfileId": 14,
    "activeProfileName": "2️⃣1️⃣6️⃣0️⃣🅿️",
-   "activeDirectory": "/media/video/movie",
+   "activeDirectory": "/media/movie",
    "is4k": false,
-   "minimumAvailability": "inCinemas",
+   "minimumAvailability": "released",
    "tags": [
     1
    ],
@@ -83,19 +83,18 @@
  "sonarr": [
   {
    "name": "Sonarr",
-   "hostname": "172.128.2.18",
+   "hostname": "sonarr",
    "port": 8989,
    "apiKey": "43cc956985c343998f815949250c2a34",
    "useSsl": false,
-   "baseUrl": "",
    "activeProfileId": 10,
-   "activeLanguageProfileId": 3,
+   "activeLanguageProfileId": 1,
    "activeProfileName": "2️⃣1️⃣6️⃣0️⃣🅿️",
-   "activeDirectory": "/media/video/serial",
+   "activeDirectory": "/media/serial",
    "activeAnimeProfileId": 9,
-   "activeAnimeLanguageProfileId": 2,
+   "activeAnimeLanguageProfileId": 1,
    "activeAnimeProfileName": "1️⃣0️⃣8️⃣0️⃣🅿️💤",
-   "activeAnimeDirectory": "/media/video/anime",
+   "activeAnimeDirectory": "/media/anime",
    "tags": [
     3
    ],
@@ -173,7 +172,8 @@
     "types": 0,
     "options": {
      "accessToken": "",
-     "userToken": ""
+     "userToken": "",
+     "sound": ""
     }
    },
    "webhook": {
@@ -181,7 +181,7 @@
     "types": 0,
     "options": {
      "webhookUrl": "",
-     "jsonPayload": "IntcbiAgICBcIm5vdGlmaWNhdGlvbl90eXBlXCI6IFwie3tub3RpZmljYXRpb25fdHlwZX19XCIsXG4gICAgXCJldmVudFwiOiBcInt7ZXZlbnR9fVwiLFxuICAgIFwic3ViamVjdFwiOiBcInt7c3ViamVjdH19XCIsXG4gICAgXCJtZXNzYWdlXCI6IFwie3ttZXNzYWdlfX1cIixcbiAgICBcImltYWdlXCI6IFwie3tpbWFnZX19XCIsXG4gICAgXCJ7e21lZGlhfX1cIjoge1xuICAgICAgICBcIm1lZGlhX3R5cGVcIjogXCJ7e21lZGlhX3R5cGV9fVwiLFxuICAgICAgICBcInRtZGJJZFwiOiBcInt7bWVkaWFfdG1kYmlkfX1cIixcbiAgICAgICAgXCJ0dmRiSWRcIjogXCJ7e21lZGlhX3R2ZGJpZH19XCIsXG4gICAgICAgIFwic3RhdHVzXCI6IFwie3ttZWRpYV9zdGF0dXN9fVwiLFxuICAgICAgICBcInN0YXR1czRrXCI6IFwie3ttZWRpYV9zdGF0dXM0a319XCJcbiAgICB9LFxuICAgIFwie3tyZXF1ZXN0fX1cIjoge1xuICAgICAgICBcInJlcXVlc3RfaWRcIjogXCJ7e3JlcXVlc3RfaWR9fVwiLFxuICAgICAgICBcInJlcXVlc3RlZEJ5X2VtYWlsXCI6IFwie3tyZXF1ZXN0ZWRCeV9lbWFpbH19XCIsXG4gICAgICAgIFwicmVxdWVzdGVkQnlfdXNlcm5hbWVcIjogXCJ7e3JlcXVlc3RlZEJ5X3VzZXJuYW1lfX1cIixcbiAgICAgICAgXCJyZXF1ZXN0ZWRCeV9hdmF0YXJcIjogXCJ7e3JlcXVlc3RlZEJ5X2F2YXRhcn19XCJcbiAgICB9LFxuICAgIFwie3tpc3N1ZX19XCI6IHtcbiAgICAgICAgXCJpc3N1ZV9pZFwiOiBcInt7aXNzdWVfaWR9fVwiLFxuICAgICAgICBcImlzc3VlX3R5cGVcIjogXCJ7e2lzc3VlX3R5cGV9fVwiLFxuICAgICAgICBcImlzc3VlX3N0YXR1c1wiOiBcInt7aXNzdWVfc3RhdHVzfX1cIixcbiAgICAgICAgXCJyZXBvcnRlZEJ5X2VtYWlsXCI6IFwie3tyZXBvcnRlZEJ5X2VtYWlsfX1cIixcbiAgICAgICAgXCJyZXBvcnRlZEJ5X3VzZXJuYW1lXCI6IFwie3tyZXBvcnRlZEJ5X3VzZXJuYW1lfX1cIixcbiAgICAgICAgXCJyZXBvcnRlZEJ5X2F2YXRhclwiOiBcInt7cmVwb3J0ZWRCeV9hdmF0YXJ9fVwiXG4gICAgfSxcbiAgICBcInt7Y29tbWVudH19XCI6IHtcbiAgICAgICAgXCJjb21tZW50X21lc3NhZ2VcIjogXCJ7e2NvbW1lbnRfbWVzc2FnZX19XCIsXG4gICAgICAgIFwiY29tbWVudGVkQnlfZW1haWxcIjogXCJ7e2NvbW1lbnRlZEJ5X2VtYWlsfX1cIixcbiAgICAgICAgXCJjb21tZW50ZWRCeV91c2VybmFtZVwiOiBcInt7Y29tbWVudGVkQnlfdXNlcm5hbWV9fVwiLFxuICAgICAgICBcImNvbW1lbnRlZEJ5X2F2YXRhclwiOiBcInt7Y29tbWVudGVkQnlfYXZhdGFyfX1cIlxuICAgIH0sXG4gICAgXCJ7e2V4dHJhfX1cIjogW11cbn0i"
+     "jsonPayload": "IntcbiAgXCJub3RpZmljYXRpb25fdHlwZVwiOiBcInt7bm90aWZpY2F0aW9uX3R5cGV9fVwiLFxuICBcImV2ZW50XCI6IFwie3tldmVudH19XCIsXG4gIFwic3ViamVjdFwiOiBcInt7c3ViamVjdH19XCIsXG4gIFwibWVzc2FnZVwiOiBcInt7bWVzc2FnZX19XCIsXG4gIFwiaW1hZ2VcIjogXCJ7e2ltYWdlfX1cIixcbiAgXCJ7e21lZGlhfX1cIjoge1xuICAgIFwibWVkaWFfdHlwZVwiOiBcInt7bWVkaWFfdHlwZX19XCIsXG4gICAgXCJ0bWRiSWRcIjogXCJ7e21lZGlhX3RtZGJpZH19XCIsXG4gICAgXCJ0dmRiSWRcIjogXCJ7e21lZGlhX3R2ZGJpZH19XCIsXG4gICAgXCJzdGF0dXNcIjogXCJ7e21lZGlhX3N0YXR1c319XCIsXG4gICAgXCJzdGF0dXM0a1wiOiBcInt7bWVkaWFfc3RhdHVzNGt9fVwiXG4gIH0sXG4gIFwie3tyZXF1ZXN0fX1cIjoge1xuICAgIFwicmVxdWVzdF9pZFwiOiBcInt7cmVxdWVzdF9pZH19XCIsXG4gICAgXCJyZXF1ZXN0ZWRCeV9lbWFpbFwiOiBcInt7cmVxdWVzdGVkQnlfZW1haWx9fVwiLFxuICAgIFwicmVxdWVzdGVkQnlfdXNlcm5hbWVcIjogXCJ7e3JlcXVlc3RlZEJ5X3VzZXJuYW1lfX1cIixcbiAgICBcInJlcXVlc3RlZEJ5X2F2YXRhclwiOiBcInt7cmVxdWVzdGVkQnlfYXZhdGFyfX1cIixcbiAgICBcInJlcXVlc3RlZEJ5X3NldHRpbmdzX2Rpc2NvcmRJZFwiOiBcInt7cmVxdWVzdGVkQnlfc2V0dGluZ3NfZGlzY29yZElkfX1cIixcbiAgICBcInJlcXVlc3RlZEJ5X3NldHRpbmdzX3RlbGVncmFtQ2hhdElkXCI6IFwie3tyZXF1ZXN0ZWRCeV9zZXR0aW5nc190ZWxlZ3JhbUNoYXRJZH19XCJcbiAgfSxcbiAgXCJ7e2lzc3VlfX1cIjoge1xuICAgIFwiaXNzdWVfaWRcIjogXCJ7e2lzc3VlX2lkfX1cIixcbiAgICBcImlzc3VlX3R5cGVcIjogXCJ7e2lzc3VlX3R5cGV9fVwiLFxuICAgIFwiaXNzdWVfc3RhdHVzXCI6IFwie3tpc3N1ZV9zdGF0dXN9fVwiLFxuICAgIFwicmVwb3J0ZWRCeV9lbWFpbFwiOiBcInt7cmVwb3J0ZWRCeV9lbWFpbH19XCIsXG4gICAgXCJyZXBvcnRlZEJ5X3VzZXJuYW1lXCI6IFwie3tyZXBvcnRlZEJ5X3VzZXJuYW1lfX1cIixcbiAgICBcInJlcG9ydGVkQnlfYXZhdGFyXCI6IFwie3tyZXBvcnRlZEJ5X2F2YXRhcn19XCIsXG4gICAgXCJyZXBvcnRlZEJ5X3NldHRpbmdzX2Rpc2NvcmRJZFwiOiBcInt7cmVwb3J0ZWRCeV9zZXR0aW5nc19kaXNjb3JkSWR9fVwiLFxuICAgIFwicmVwb3J0ZWRCeV9zZXR0aW5nc190ZWxlZ3JhbUNoYXRJZFwiOiBcInt7cmVwb3J0ZWRCeV9zZXR0aW5nc190ZWxlZ3JhbUNoYXRJZH19XCJcbiAgfSxcbiAgXCJ7e2NvbW1lbnR9fVwiOiB7XG4gICAgXCJjb21tZW50X21lc3NhZ2VcIjogXCJ7e2NvbW1lbnRfbWVzc2FnZX19XCIsXG4gICAgXCJjb21tZW50ZWRCeV9lbWFpbFwiOiBcInt7Y29tbWVudGVkQnlfZW1haWx9fVwiLFxuICAgIFwiY29tbWVudGVkQnlfdXNlcm5hbWVcIjogXCJ7e2NvbW1lbnRlZEJ5X3VzZXJuYW1lfX1cIixcbiAgICBcImNvbW1lbnRlZEJ5X2F2YXRhclwiOiBcInt7Y29tbWVudGVkQnlfYXZhdGFyfX1cIixcbiAgICBcImNvbW1lbnRlZEJ5X3NldHRpbmdzX2Rpc2NvcmRJZFwiOiBcInt7Y29tbWVudGVkQnlfc2V0dGluZ3NfZGlzY29yZElkfX1cIixcbiAgICBcImNvbW1lbnRlZEJ5X3NldHRpbmdzX3RlbGVncmFtQ2hhdElkXCI6IFwie3tjb21tZW50ZWRCeV9zZXR0aW5nc190ZWxlZ3JhbUNoYXRJZH19XCJcbiAgfSxcbiAgXCJ7e2V4dHJhfX1cIjogW11cbn0i"
     }
    },
    "webpush": {
@@ -223,10 +223,10 @@
   "download-sync-reset": {
    "schedule": "0 0 1 * * *"
   },
-  "jellyfin-recently-added-sync": {
+  "jellyfin-recently-added-scan": {
    "schedule": "0 */5 * * * *"
   },
-  "jellyfin-full-sync": {
+  "jellyfin-full-scan": {
    "schedule": "0 0 3 * * *"
   },
   "image-cache-cleanup": {

@@ -16,10 +16,10 @@ caps:
     - {id: 7, cat: Movies/SD, desc: "Українські фільми SD"}
     - {id: 38, cat: TV/UHD, desc: "Українські серіали HD, UHD"}
     - {id: 8, cat: TV/SD, desc: "Українські серіали SD"}
-    - {id: 35, cat: TV/Anime, desc: "Українські мультфільми HD, UHD"}
-    - {id: 5, cat: TV/Anime, desc: "Українські мультфільми SD"}
-    - {id: 36, cat: TV/Anime, desc: "Українські мультсеріали HD, UHD"}
-    - {id: 6, cat: TV/Anime, desc: "Українські мультсеріали SD"}
+    - {id: 35, cat: Movies/UHD, desc: "Українські мультфільми HD, UHD"}
+    - {id: 5, cat: Movies/SD, desc: "Українські мультфільми SD"}
+    - {id: 36, cat: TV/UHD, desc: "Українські мультсеріали HD, UHD"}
+    - {id: 6, cat: TV/SD, desc: "Українські мультсеріали SD"}
     - {id: 39, cat: TV/Documentary, desc: "Українські документальні HD, UHD"}
     - {id: 9, cat: TV/Documentary, desc: "Українські документальні SD"}
     # Озвучений контент
@@ -31,18 +31,18 @@ caps:
     - {id: 152, cat: TV/UHD, desc: "Озвучений контент Серіали UHD"}
     - {id: 44, cat: TV/HD, desc: "Озвучений контент Серіали HD"}
     - {id: 14, cat: TV/SD, desc: "Озвучений контент Серіали SD"}
-    - {id: 155, cat: TV/Anime, desc: "Озвучений контент Мультфільми UHD"}
-    - {id: 41, cat: TV/Anime, desc: "Озвучений контент Мультфільми HD"}
-    - {id: 10, cat: TV/Anime, desc: "Озвучений контент Мультфільми SD"}
-    - {id: 43, cat: TV/Anime, desc: "Озвучений контент Мультсеріали HD"}
-    - {id: 11, cat: TV/Anime, desc: "Озвучений контент Мультсеріали SD"}
+    - {id: 155, cat: Movies/UHD, desc: "Озвучений контент Мультфільми UHD"}
+    - {id: 41, cat: Movies/HD, desc: "Озвучений контент Мультфільми HD"}
+    - {id: 10, cat: Movies/SD, desc: "Озвучений контент Мультфільми SD"}
+    - {id: 43, cat: TV/HD, desc: "Озвучений контент Мультсеріали HD"}
+    - {id: 11, cat: TV/SD, desc: "Озвучений контент Мультсеріали SD"}
     - {id: 16, cat: TV/Anime, desc: "Аніме"}
     - {id: 157, cat: TV/Documentary, desc: "Озвучений Документальне UHD"}
     - {id: 42, cat: TV/Documentary, desc: "Озвучений Документальне HD"}
     - {id: 15, cat: TV/Documentary, desc: "Озвучений Документальне SD"}
     # Спорт
-    - {id: 20, cat: TV/Sport, desc: "Спорт Формула 1 Сезон 2023"}
-    - {id: 167, cat: TV/Sport, desc: "Спорт Формула 1 Сезон 2022"}
+    - {id: 20, cat: TV/Sport, desc: "Спорт Формула 1 Сезон 2024"}
+    - {id: 167, cat: TV/Sport, desc: "Спорт Формула 1 Сезон 2022-2023"}
     - {id: 79, cat: TV/Sport, desc: "Спорт Формула 1 Сезони 2017-2021"}
     - {id: 21, cat: TV/Sport, desc: "Спорт Формула 1 Сезони 2007-2016"}
     - {id: 75, cat: TV/Sport, desc: "Спорт Формула 1 Сезони до 2006"}
@@ -50,6 +50,7 @@ caps:
     - {id: 47, cat: TV/Sport, desc: "Автоспорт Чемпіонат та кубок України"}
     - {id: 46, cat: TV/Sport, desc: "Автоспорт Єврокубки"}
     - {id: 48, cat: TV/Sport, desc: "Автоспорт Чемпіонат Світу"}
+    - {id: 182, cat: TV/Sport, desc: "Автоспорт Євро 2024"}
     - {id: 49, cat: TV/Sport, desc: "Автоспорт Чемпіонат Європи"}
     - {id: 53, cat: TV/Sport, desc: "Автоспорт Закордонні чемпіонати"}
     - {id: 19, cat: TV/Sport, desc: "Бокс"}
@@ -95,6 +96,8 @@ caps:
     - {id: 166, cat: Audio, desc: "Закритий розділ Country, Country pop, Bluegrass, Southern rock"}
     - {id: 162, cat: Audio, desc: "Закритий розділ Electronic"}
     - {id: 164, cat: Audio, desc: "Закритий розділ Other Styles"}
+    # archive, not in tracker search category pulldown
+    - {id: 23, cat: Other, desc: "Архів"}
 
   modes:
     search: [q]
@@ -200,13 +203,13 @@ search:
 
   fields:
     category:
-      selector: a[href^="tracker.php?f="]
-      attribute: href
+      selector: a[onclick]
+      attribute: onclick
       filters:
-        - name: querystring
-          args: f
+        - name: regexp
+          args: f=(\d+)
     title:
-      selector: a[href^="./viewtopic.php?t="]
+      selector: a.genmed
       filters:
         # normalize to SXXEYY format
         # Ukrainian
@@ -288,10 +291,13 @@ search:
         - name: re_replace
           args: ["(?i)^\\(\\s*([SE]\\d+.*?)\\s*\\)[\\s\\/\\|]*(.+)", "$2 $1"]
     details:
-      selector: a[href^="./viewtopic.php?t="]
+      selector: a.genmed
       attribute: href
     download:
       selector: a[href^="./dl.php?id="]
+      attribute: href
+    magnet:
+      selector: a[href^="magnet:?xt="]
       attribute: href
     size:
       selector: a[href^="./dl.php?id="]
@@ -344,5 +350,8 @@ search:
     uploadvolumefactor:
       text: 1
     description:
-      selector: a[href^="./viewtopic.php?t="]
+      case:
+        span.tor-approved: Verified
+        span.tor-not-approved: Unverified
+        span.tor-dup: Temporary
 # TorrentPier

@@ -6,9 +6,10 @@ language: en-US
 type: private
 encoding: UTF-8
 links:
+  - https://torrent.desi/
+legacylinks:
   - https://desitorrents.tv/
   - https://desitorrents.rocks/
-  - https://torrent.desi/
 
 caps:
   categorymappings:
@@ -50,9 +51,13 @@ settings:
     options:
       desc: desc
       asc: asc
+  - name: info_activity
+    type: info
+    label: Account Inactivity
+    default: "Inactive accounts will be disabled after 3 months of inactivity, 1 month for new accounts. Members must generate some download or upload activity at least once every 3 months."
 
 login:
-  path: /api/torrents
+  path: /api/v1/torrents
   method: get
   inputs: {} # TODO: remove in v10
   error:
@@ -62,9 +67,9 @@ login:
 
 search:
   paths:
-    # https://github.com/HDInnovations/UNIT3D-Community-Edition/wiki/Torrent-API-(UNIT3D-v7.0.0)
-    # https://github.com/HDInnovations/UNIT3D-Community-Edition/blob/master/app/Http/Controllers/API/TorrentController.php#L349
-    - path: "/api/torrents/filter"
+    # https://github.com/HDInnovations/UNIT3D-Community-Edition/wiki/Torrent-API-(UNIT3D-v8.x.x)
+    # https://github.com/HDInnovations/UNIT3D-Community-Edition/blob/master/app/Http/Controllers/API/TorrentController.php#L476
+    - path: "/api/v1/torrents/filter"
       response:
         type: json
 
@@ -118,6 +123,8 @@ search:
     genre:
       selector: meta.genres
       filters:
+        - name: re_replace
+          args: ["(?i)^None$", ""]
         - name: re_replace
           args: ["(?i)(Science Fiction)", "Science_Fiction"]
         - name: re_replace

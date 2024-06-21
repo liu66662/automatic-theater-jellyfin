@@ -1,7 +1,7 @@
 ---
 id: portugas-api
 name: Portugas (API)
-description: "Portugas is a Private Portoguese Tracker"
+description: "Portugas is a Private PORTUGUESE Tracker"
 language: pt-PT
 type: private
 encoding: UTF-8
@@ -55,6 +55,10 @@ settings:
     options:
       desc: desc
       asc: asc
+  - name: info_activity
+    type: info
+    label: Account Inactivity
+    default: "All users must log into their account at least once every 60 days, otherwise the account will be deactivated."
 
 login:
   path: /api/torrents
@@ -67,8 +71,8 @@ login:
 
 search:
   paths:
-    # https://github.com/HDInnovations/UNIT3D-Community-Edition/wiki/Torrent-API-(UNIT3D-v7.0.0)
-    # https://github.com/HDInnovations/UNIT3D-Community-Edition/blob/master/app/Http/Controllers/API/TorrentController.php#L349
+    # https://github.com/HDInnovations/UNIT3D-Community-Edition/wiki/Torrent-API-(UNIT3D-v8.x.x)
+    # https://github.com/HDInnovations/UNIT3D-Community-Edition/blob/master/app/Http/Controllers/API/TorrentController.php#L476
     - path: "/api/torrents/filter"
       response:
         type: json
@@ -128,6 +132,8 @@ search:
     genre:
       selector: meta.genres
       filters:
+        - name: re_replace
+          args: ["(?i)^None$", ""]
         - name: re_replace
           args: ["(?i)(Ficção científica)", "Ficção_científica"]
         - name: re_replace

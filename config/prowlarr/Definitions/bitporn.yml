@@ -32,6 +32,7 @@ caps:
     - {id: 426, cat: XXX, desc: "Fetish"}
     - {id: 457, cat: XXX, desc: "Fisting"}
     - {id: 453, cat: XXX, desc: "Gangbang"}
+    - {id: 459, cat: XXX, desc: "Game"}
     - {id: 427, cat: XXX, desc: "Gay / Bi"}
     - {id: 412, cat: XXX, desc: "Hair"}
     - {id: 411, cat: XXX, desc: "Hardcore"}
@@ -93,6 +94,10 @@ settings:
     type: info
     label: Results Per Page
     default: For best results, change the <b>Torrents per page:</b> setting to <b>100</b> on your account profile.
+  - name: info_activity
+    type: info
+    label: Account Inactivity
+    default: "Inactive accounts will be deleted based on the following rules:<ul><li>Elite-ranked or higher-ranked accounts are never deleted after parking (in the control panel).</li><li>Veteran-ranked or higher-ranked accounts are never deleted.</li><li>Parked accounts are deleted if users haven't logged in for more than 400 days.</li><li>Non-parked accounts are deleted if users haven't logged in for more than 150 days.</li><li>Accounts with both uploaded and downloaded quantities at 0 will be deleted if users haven't logged in for more than 100 consecutive days.</li></ul>"
 
 login:
   path: takelogin.php
