@@ -126,9 +126,9 @@ services:
       - ${CONFIG_PATH}/qbittorrent:/config
       - ${MEDIA_PATH}:/media
     networks:
-      - default
-      - macvlan_name:
-         ipv4_address: ${qbittorrent_ip}
+      default:
+      macvlan_name:
+          ipv4_address: ${qbittorrent_ip}
 
   transmission:
     image: linuxserver/transmission
@@ -138,18 +138,18 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - RPCPORT=40220
       - USER=atm
       - PASS=atm@20230101
-      #- TRANSMISSION_WEB_HOME=/config/web/
+      - RPCPORT=40220
+      - TRANSMISSION_WEB_HOME=/config/webui/
     volumes:
       - ${CONFIG_PATH}/transmission:/config
       - ${MEDIA_PATH}:/media
       - ${MEDIA_PATH}/watch:/watch
     networks:
-      - default
-      - macvlan_name:
-          ipv4_address: ${transmission_ip}
+      default:
+      macvlan_name:
+        ipv4_address: ${transmission_ip}
 
   jellyfin:
     image: nyanmisaka/jellyfin:latest

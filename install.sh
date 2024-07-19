@@ -80,6 +80,10 @@ if [[ ! -d ${MEDIA_PATH}/download ]]; then
 	sudo mkdir ${MEDIA_PATH}/download
 	echo "✅  创建目录成功：${MEDIA_PATH}/download"
 fi
+if [[ ! -d ${MEDIA_PATH}/other ]]; then
+	sudo mkdir ${MEDIA_PATH}/other
+	echo "✅  创建目录成功：${MEDIA_PATH}/other"
+fi
 echo "✅  创建目录成功"
 
 echo ""
