@@ -126,32 +126,30 @@ services:
       - ${CONFIG_PATH}/qbittorrent:/config
       - ${MEDIA_PATH}:/media
     networks:
-      default:
-        priority: 100
-      macvlan_name:
-        ipv4_address: ${qbittorrent_ip}
-        priority: 1000
+      - default
+      - macvlan_name:
+         ipv4_address: ${qbittorrent_ip}
 
-  chinesesubfinder:
-    image: allanpk716/chinesesubfinder:latest-lite
-    container_name: chinesesubfinder
+  transmission:
+    image: linuxserver/transmission
+    container_name: transmission
     restart: unless-stopped
-    volumes:
-      - ${CONFIG_PATH}/chinesesubfinder:/config
-      - ${MEDIA_PATH}:/media
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - PERMS=true
-      - UMASK=022
-    hostname: chinesesubfinder
-    ports:
-      - 40220:19035
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100m"
+      - RPCPORT=40220
+      - USER=atm
+      - PASS=atm@20230101
+      #- TRANSMISSION_WEB_HOME=/config/web/
+    volumes:
+      - ${CONFIG_PATH}/transmission:/config
+      - ${MEDIA_PATH}:/media
+      - ${MEDIA_PATH}/watch:/watch
+    networks:
+      - default
+      - macvlan_name:
+          ipv4_address: ${transmission_ip}
 
   jellyfin:
     image: nyanmisaka/jellyfin:latest
