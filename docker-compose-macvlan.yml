@@ -16,6 +16,7 @@ services:
     volumes:
       - ${CONFIG_PATH}/homarr/configs:/app/data/configs
       - ${CONFIG_PATH}/homarr/icons:/app/public/icons
+      - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 47575:7575
 
