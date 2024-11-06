@@ -915,53 +915,6 @@
       }
     },
     {
-      "id": "86b1921f-efa7-410f-92dd-79553bf3264d",
-      "type": "notebook",
-      "properties": {
-        "showToolbar": true,
-        "content": "<h2><strong>欢迎使用 🚀👋</strong></h2><p>此项目Fork自<a rel=\"noopener noreferrer nofollow\" href=\"https://github.com/LuckyPuppy514/automatic-theater\">https://github.com/LuckyPuppy514/automatic-theater</a>，主要改动如下：</p><ul><li><p>主页面板由Heimdall替换为Homarr</p></li><li><p>媒体服务由Emby替换为Jellyfin（nyanmisaka版本）</p></li><li><p>修改所有应用间调用地址为docker容器名，不再依赖固定IP</p></li><li><p>支持qb使用macvlan网络，独立IP用于控制避免占用梯子流量</p></li><li><p>新增52BT索引，能够支持国产电视剧下载</p></li></ul><p></p><p><strong>需要自己额外修改的部分：</strong></p><ul><li><p>JProxy中TMDB的api密钥需要自行申请填写</p></li><li><p>BT下载器udp端口需要在路由器端口转发暴露到外网</p></li></ul>",
-        "allowReadOnlyCheck": true
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 3,
-            "height": 2
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 3,
-            "height": 4
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 5,
-            "height": 3
-          }
-        }
-      }
-    },
-    {
       "id": "971aa859-8570-49a1-8d34-dd5c7b3638d1",
       "type": "date",
       "properties": {
